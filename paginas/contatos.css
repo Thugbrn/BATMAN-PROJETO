@@ -49,7 +49,7 @@ li:hover {
 }
 
 .contact {
-    background: url(https://getwallpapers.com/wallpaper/full/e/7/a/1265797-new-batman-4k-wallpaper-3840x2160-for-computer.jpg);
+    background: url(https://images8.alphacoders.com/116/1161255.png);
     min-height: 100vh;
     padding: 50px 100px;
     display: flex;
@@ -182,7 +182,7 @@ li:hover {
 
 footer {
     height: 135px;
-    margin-top: 0px;
+    margin-top: -11px;
     display: flex;
     flex-direction: column;
     align-items: center;
