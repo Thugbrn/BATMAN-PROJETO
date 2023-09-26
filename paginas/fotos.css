@@ -113,7 +113,7 @@ footer {
 
 span {
     color: #fff;
-    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Kdam Thmor Pro', sans-serif;font-family: system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
 .footer-navigation {
