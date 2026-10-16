@@ -43,7 +43,7 @@ a {
     text-decoration: none;
 }
 
-li {
+li a {
     list-style: none;
     color: aliceblue;
     cursor: pointer;
@@ -52,7 +52,7 @@ li {
     font-family: 'kdam Thmor Pro', sans-serif;
 }
 
-li:hover {
+li a:hover {
     color: #d21617; 
 }
 
@@ -126,6 +126,101 @@ display: none
     align-items: center;
 }
 
+li a:focus-visible,
+.gallery-items:focus-visible {
+    outline: 2px solid #d21617;
+    outline-offset: 4px;
+}
+
+.image-viewer {
+    width: min(94vw, 1100px);
+    max-width: none;
+    max-height: 94vh;
+    margin: auto;
+    padding: 24px;
+    border: 1px solid #570000;
+    border-radius: 8px;
+    background: #090909;
+    color: #fff;
+}
+
+.image-viewer::backdrop {
+    background: rgba(0, 0, 0, .88);
+}
+
+.image-viewer-content {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 16px;
+}
+
+.image-viewer button {
+    min-height: 44px;
+    padding: 9px 16px;
+    border: 1px solid #d21617;
+    border-radius: 4px;
+    background: #d21617;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+}
+
+.image-viewer button:hover {
+    background: #a90f10;
+}
+
+.image-viewer button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+.image-viewer-close {
+    grid-column: 1 / -1;
+    justify-self: end;
+}
+
+.image-viewer figure {
+    min-width: 0;
+    margin: 0;
+    grid-column: 2;
+    grid-row: 2;
+    text-align: center;
+}
+
+.image-viewer-image {
+    display: block;
+    max-width: 100%;
+    max-height: 72vh;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.image-viewer-caption {
+    margin-top: 10px;
+    color: #fff;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.image-viewer-previous {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.image-viewer-next {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.image-viewer-count {
+    margin: 0;
+    grid-column: 1 / -1;
+    color: #ccc;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .footer-navigation {
         display: block;
@@ -140,5 +235,45 @@ display: none
 
     main {
         background-color: black;
+    }
+
+    .image-viewer {
+        padding: 12px;
+    }
+
+    .image-viewer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .image-viewer-close,
+    .image-viewer figure,
+    .image-viewer-count {
+        grid-column: 1 / -1;
+    }
+
+    .image-viewer figure {
+        grid-row: 2;
+    }
+
+    .image-viewer-image {
+        max-height: 68vh;
+    }
+
+    .image-viewer-previous,
+    .image-viewer-next {
+        grid-row: 3;
+    }
+
+    .image-viewer-previous {
+        grid-column: 1;
+    }
+
+    .image-viewer-next {
+        grid-column: 2;
+    }
+
+    .image-viewer-count {
+        grid-row: 4;
     }
 }

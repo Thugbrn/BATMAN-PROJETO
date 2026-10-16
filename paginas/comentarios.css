@@ -32,7 +32,7 @@ a {
     text-decoration: none;
 }
 
-li {
+li a {
     list-style: none;
     color: aliceblue;
     cursor: pointer;
@@ -41,7 +41,7 @@ li {
     font-family: 'kdam Thmor Pro', sans-serif;
 }
 
-li:hover {
+li a:hover {
     color: #d21617; 
 }
 
@@ -92,11 +92,13 @@ h3 {
 }
 
 .container .navbar{
-    width: 30%;
+    width: 100%;
+    max-width: 600px;
     display: flex;
     margin-top: 2%;
     align-items: center;
     justify-content: space-around;
+    box-sizing: border-box;
 
 }
 
@@ -107,20 +109,28 @@ h3 {
 }
 
 .container .navbar .box {
-    width: 45px;
+    width: 50px;
     height: 50px;
+    box-sizing: border-box;
+    flex: 0 0 50px;
     display: flex;
     align-items: center;
-    padding: 5px;
+    padding: 0;
     margin: 0.1rem;
     position: relative;
     overflow: hidden;
     cursor: pointer;
     transition: all .4s ease;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
 }
 
 .container .navbar .box:hover {
     width: 150px;
+    flex-basis: 150px;
     background: #c32aa3;
     border-radius: 25px;
     color: #fff;
@@ -144,6 +154,8 @@ h3 {
 
 .container .navbar .box .icon {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 50px;
     height: 50px;
     display: flex;
@@ -258,6 +270,38 @@ h3 {
     font-size: 18px;
 }
 
+li a:focus-visible,
+.container .navbar .box:focus-visible,
+.contactForm .inputBox input[type="submit"]:focus-visible {
+    outline: 2px solid #d21617;
+    outline-offset: 4px;
+}
+
+.Share #share-status,
+#comment-status {
+    color: #fff;
+    font-size: 14px;
+}
+
+.comments-list {
+    width: 35%;
+    margin-top: 24px;
+}
+
+.comment-item {
+    margin-top: 12px;
+    padding: 16px;
+    border-left: 3px solid #d21617;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    overflow-wrap: anywhere;
+}
+
+.comment-item h4 {
+    margin-bottom: 6px;
+    color: #d21617;
+}
+
 footer {
     height: 135px;
     margin-top: -8.6px;
@@ -293,13 +337,12 @@ display: none
     }
     
     .container .navbar, 
-    .contactForm {
+    .contactForm,
+    .comments-list {
         width: 100%
     }
 
     .container .navbar {
-        width: 120%;
-        display: flex;
         margin-top: 1%;
         justify-content: space-evenly      
     }

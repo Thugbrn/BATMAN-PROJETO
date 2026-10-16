@@ -26,11 +26,15 @@ ul {
     justify-content: space-between;
 }
 
+li {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
 }
 
-li {
+li a {
     list-style: none;
     color: aliceblue;
     cursor: pointer;
@@ -39,7 +43,7 @@ li {
     font-family: 'kdam Thmor Pro', sans-serif;
 }
 
-li:hover {
+li a:hover {
     color: #d21617; 
 }
 
@@ -178,6 +182,17 @@ li:hover {
     cursor: pointer;
     padding: 10px;
     font-size: 18px;
+}
+
+li a:focus-visible,
+.contactForm .inputBox input[type="submit"]:focus-visible {
+    outline: 2px solid #d21617;
+    outline-offset: 4px;
+}
+
+#contact-status {
+    color: #333;
+    font-size: 14px;
 }
 
 footer {
